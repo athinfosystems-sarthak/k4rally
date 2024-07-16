@@ -1,0 +1,54 @@
+version: "3.3"
+services:
+ tokenMigration_backend_app :
+    container_name: tokenMigration_backend_app
+    image: tokenMigration-backend-app:v1.0
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    ports:
+      - "8100:8100"
+    volumes:
+      - .:/server
+    command: npm run start-dev
+    depends_on:
+      - tokenMigration_mongo_db
+      - tokenMigration_redis_db
+    restart: always
+
+ tokenMigration_mongo_db:
+    container_name: tokenMigration-mongo-db
+    image: "mongo:latest"
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - tokenMigration:/data/db
+  
+ mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8500:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://tokenMigration_mongo_db:27017/tokenMigration
+
+ tokenMigration_redis_db:
+    container_name: tokenMigration-redis-db
+    image: "redis:alpine"
+    restart: always
+    ports:
+      - "6380:6379"
+
+ tokenMigration_redis_commander:
+    container_name: tokenMigration-redis-commander
+    image: "rediscommander/redis-commander:latest"
+    restart: always
+    environment:
+    - REDIS_HOSTS=local:tokenMigration_redis_db
+    ports:
+    - "5052:8081"
+
+volumes:
+  tokenMigration:

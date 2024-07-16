@@ -1,0 +1,5 @@
+config/env/.env
+log/access.log
+log/app.log
+log/errors.log
+node_modules

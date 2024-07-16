@@ -1,0 +1,31 @@
+{
+  "name": "token-migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start-dev": "nodemon -L index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bull-board/api": "^4.6.0",
+    "@bull-board/express": "^4.6.0",
+    "bull": "^4.10.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.48.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "ethers": "^6.11.1",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-jwt": "^7.7.5",
+    "joi": "^17.13.1",
+    "log4js": "^6.9.1",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.0"
+  }
+}

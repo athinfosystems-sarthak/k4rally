@@ -1,0 +1,14 @@
+module.exports.WEB3 = {
+
+  POLYGON_TESTNET_RPC_URL: process.env.POLYGON_TESTNET_RPC_URL,
+  BNB_TESTNET_RPC_URL: process.env.BNB_TESTNET_RPC_URL,
+  BLOCKCHAIN_NETWORK: 'bnb',
+  TOKEN_CONTRACT_ADDRESS: process.env.BNB_TOKEN_CONTRACT_ADDRESS, // bnb test net token with verified
+
+  VESTING_CONTRACT_ADDRESS: process.env.VESTING_CONTRACT_ADDRESS,
+
+  PRIVATE_KEY: process.env.PRIVATE_KEY,
+
+  // TOKEN_CONTRACT_ADDRESS: '0x87158682e70908FF80c4Ff6E7bBc4D0De10452c8', //sepolia testnet erc20 token for burn
+
+};
